@@ -5,34 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/d20e6a562e.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="container">
         <h1>TO DO LIST</h1>
         <section class = "input-area">
-            <input type ="text"/>
-            <button>+</button>
+            <input type ="text" id="task-input"/>
+            <button id="add-button">+</button>
             <section class ="task-area">
                 <div class="task-tabs">
                     <div id="under-line"></div>
                     <div>
-                       모두     
+                       All     
                     </div>
                     <div>
-                       진행중
+                       not Done
                     </div>
                     <div>
-                        끝남
+                        Done
                     </div>
                 </div>
-                <div class="task">
-                    <div>집가기</div>
-                    <div>
-                        <button>Check</button>
-                        <button>Delete</button>
-                    </div>
+                <div id="task-board">
                 </div>
             </section>
         </section>
@@ -41,6 +38,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-    <script src="style.css"></script>
+    <script src="main.js"></script>
 </body>
 </html>
