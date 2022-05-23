@@ -23,7 +23,7 @@ addButton.addEventListener("click", addTask);
 
 for(let i=1; i<tabs.length; i++) {
     tabs[i].addEventListener("click", function(event) {
-        filter(event)
+        filter(event);
     });
 }
 
@@ -35,7 +35,6 @@ function addTask() {
         isComplete : false
     };
     taskList.push(task);
-    console.log(taskList);
     render();    
 }
 
@@ -52,7 +51,7 @@ function render() {
 
     for(let i=0; i<list.length; i++){
         if(list[i].isComplete == true) {
-            resultHTML += `<div class="task task-done" id="${list[i].id}">
+            resultHTML += `<div class="task task-done">
             <div>${list[i].taskContent}</div>
             <div class="button-box">
                 <button onclick="toggleComplete('${list[i].id}')"><i class="fas fa-undo-alt"></i></button>
@@ -60,7 +59,7 @@ function render() {
             </div>
             </div>`;
         } else {
-            resultHTML += ` <div class="task" id="${list[i].id}">
+            resultHTML += ` <div class="task">
                 <div>${list[i].taskContent}</div>
                 <div class="button-box">
                      <button onclick="toggleComplete('${list[i].id}')"><i class="fa fa-check"></i></button>
@@ -74,7 +73,7 @@ function render() {
 
 function toggleComplete(id) {
     for(let i=0; i<taskList.length; i++) {
-        if(taskList[i].id == id) {
+        if(taskList[i].id === id) {
             // 현재값의 반대값을 출력한다.
             // true였으면 false를 출력한다.
             taskList[i].isComplete= !taskList[i].isComplete;
@@ -100,14 +99,14 @@ function deleteTask(id) {
 
 function filter(event) {
     mode = event.target.id;
-
+    filterList = [];
     
     if(mode == "all") {
         render();
 
     } else if(mode == "ongoing") {
         for(let i=0; i<taskList.length; i++) {
-            if(taskList[i].isComplete == false) {
+            if(taskList[i].isComplete === false) {
                 filterList.push(taskList[i]);
             }
         }
@@ -115,7 +114,7 @@ function filter(event) {
 
     } else if(mode == "done") {
         for(let i=0; i<taskList.length; i++) {
-            if(taskList[i].isComplete == true) {
+            if(taskList[i].isComplete === true) {
                 filterList.push(taskList[i]);
             }
         }
